@@ -32,11 +32,6 @@ phases:
       - docker push vaibhav188/backend:$CODEBUILD_BUILD_NUMBER
       
 
-  post_build:
-    commands:
-      - echo "Running docker-compose up"
-      - cd ../
-      - docker-compose up -d
 
 artifacts:
   files:
