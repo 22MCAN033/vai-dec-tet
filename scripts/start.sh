@@ -1,4 +1,6 @@
 #!/bin/bash
 
-echo "Starting the application..."
+cd /home/ubuntu/
+docker-compose pull
+docker-compose down
 docker-compose up -d

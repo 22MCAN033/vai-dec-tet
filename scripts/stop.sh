@@ -1,4 +1,4 @@
 #!/bin/bash
-
-echo "Stopping the application..."
+# Stop all running containers
+cd /home/ubuntu/
 docker-compose down
