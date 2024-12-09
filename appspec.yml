@@ -2,22 +2,22 @@ version: 0.0
 os: linux
 files:
   - source: docker-compose.yml
-    destination: /home/ubuntu/
+    destination: /home/ec2-user/
     overwrite: true   # Add this line to overwrite the existing file
   - source: scripts/start_containers.sh
-    destination: /home/ubuntu/
+    destination: /home/ec2-user/
     overwrite: true   # Add this line to overwrite the existing file
   - source: scripts/stop_containers.sh
-    destination: /home/ubuntu/
+    destination: /home/ec2-user/
     overwrite: true   # Add this line to overwrite the existing file
 
 hooks:
   BeforeInstall:
-    - location: /home/ubuntu/stop_containers.sh
+    - location: /home/ec2-user/stop_containers.sh
       timeout: 300
       runas: root
 
   ApplicationStart:
-    - location: /home/ubuntu/start_containers.sh
+    - location: /home/ec2-user/start_containers.sh
       timeout: 300
       runas: root
