@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  build:
+    commands:
+      - echo "Building Docker images"
+      - docker-compose build
+  post_build:
+    commands:
+      - echo "Pushing Docker images"
+      - docker-compose up -d
+artifacts:
+  files:
+    - '**/*'
