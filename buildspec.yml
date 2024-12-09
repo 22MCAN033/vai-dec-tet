@@ -1,0 +1,47 @@
+version: 0.2
+
+env:
+  variables:
+    DOCKER_USERNAME: "vaibhav188" # Your Docker Hub username
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+
+  pre_build:
+    commands:
+      - echo "Logging in to Docker Hub"
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+  build:
+    commands:
+      # Build and push the frontend image
+      - cd frontend/
+      - docker build -t vaibhav188/frontend:$CODEBUILD_BUILD_NUMBER .
+      - docker tag vaibhav188/frontend:$CODEBUILD_BUILD_NUMBER vaibhav188/frontend:latest
+      - docker images
+      - docker push vaibhav188/frontend:$CODEBUILD_BUILD_NUMBER
+      
+
+      # Build and push the backend image
+      - cd ../backend/
+      - docker build -t vaibhav188/backend:$CODEBUILD_BUILD_NUMBER .
+      - docker tag vaibhav188/backend:$CODEBUILD_BUILD_NUMBER vaibhav188/backend:latest
+      - docker images
+      - docker push vaibhav188/backend:$CODEBUILD_BUILD_NUMBER
+      
+
+  post_build:
+    commands:
+      - echo "Running docker-compose up"
+      - cd ../
+      - docker-compose up -d
+
+artifacts:
+  files:
+    - appspec.yml
+    - docker-compose.yml
+    - scripts/start_containers.sh
+    - scripts/stop_containers.sh
+
