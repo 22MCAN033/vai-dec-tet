@@ -32,11 +32,10 @@ phases:
       - docker push vaibhav188/backend:$CODEBUILD_BUILD_NUMBER
       
 
-
 artifacts:
   files:
     - appspec.yml
     - docker-compose.yml
-    - scripts/start_containers.sh
-    - scripts/stop_containers.sh
+    - scripts/start.sh
+    - scripts/stop.sh
 
