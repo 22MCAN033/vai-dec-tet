@@ -13,11 +13,11 @@ files:
 
 hooks:
   BeforeInstall:
-    - location: /home/ec2-user/scripts/stop.sh
+    - location: scripts/stop.sh
       timeout: 300
       runas: ec2-user
 
   ApplicationStart:
-    - location: /home/ec2-user/scripts/start.sh
+    - location: scripts/start.sh
       timeout: 300
       runas: ec2-user
