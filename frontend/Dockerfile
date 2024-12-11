@@ -12,8 +12,7 @@ RUN npm install
 
 # Explicitly ensure react-scripts is installed and set permissions
 RUN npm install react-scripts --save
-RUN chmod -R +x /app/node_modules/.bin/
-
+RUN chmod -R +x /app/node_modules/.bin/react-scripts
 # Ensure correct ownership of files
 RUN chown -R node:node /app
 
