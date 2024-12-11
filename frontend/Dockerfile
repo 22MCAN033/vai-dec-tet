@@ -7,7 +7,11 @@ WORKDIR /app
 # Copy package.json and install dependencies
 COPY package.json ./
 RUN npm install
-RUN chmod +x ./node_modules/.bin/react-scripts
+# Grant execute permissions to all binaries in node_modules/.bin
+RUN chmod -R +x /app/node_modules/.bin
+
+# Ensure ownership is correct (useful for CodeDeploy cases)
+RUN chown -R node:node /app
 
 
 # Copy source code
