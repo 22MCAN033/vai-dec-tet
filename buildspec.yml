@@ -31,12 +31,10 @@ phases:
       - docker images
       - docker push vaibhav188/backend:$CODEBUILD_BUILD_NUMBER
       
-
 artifacts:
   files:
-     - '**/*'
-    # - appspec.yml
-    # - docker-compose.yml
-    # - scripts/start.sh
-    # - scripts/stop.sh
-
+    - appspec.yml
+    - Docker-compose.yml
+    - scripts/start.sh
+  name: Artifacts
+  discard-paths: yes
