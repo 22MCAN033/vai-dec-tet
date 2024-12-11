@@ -34,8 +34,9 @@ phases:
 
 artifacts:
   files:
-    - appspec.yml
-    - docker-compose.yml
-    - scripts/start.sh
-    - scripts/stop.sh
+     - '**/*'
+    # - appspec.yml
+    # - docker-compose.yml
+    # - scripts/start.sh
+    # - scripts/stop.sh
 
