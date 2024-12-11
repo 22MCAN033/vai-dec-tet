@@ -21,7 +21,7 @@ function App() {
 
     // Send data to the backend
     axios
-      .post("http://13.232.156.217:5000/api/submit", formData) // Backend API endpoint
+      .post("http://localhost:5000/api/submit", formData) // Backend API endpoint
       .then((response) => {
         setMessage(response.data.message); // Display success message from backend
       })
