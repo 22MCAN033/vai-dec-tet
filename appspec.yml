@@ -4,12 +4,12 @@ files:
   - source: Docker-compose.yml
     destination: /home/ec2-user
     overwrite: true   # Add this line to overwrite the existing file
-  - source: scripts/start.sh
+  - source: start.sh
     destination: /home/ec2-user 
     overwrite: true   # Add this line to overwrite the existing file
 
 hooks:
   ApplicationStart:
-    - location: scripts/start.sh
+    - location: start.sh
       timeout: 300
       runas: root
