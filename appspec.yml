@@ -4,7 +4,7 @@ files:
   - source: docker-compose.yml
     destination: /home/ec2-user
     overwrite: true   # Add this line to overwrite the existing file
-  - source: scripts/start.sh
+  - source: start.sh
     destination: /home/ec2-user 
     overwrite: true   # Add this line to overwrite the existing file
   # - source: /home/ec2-user/scripts/start.sh
