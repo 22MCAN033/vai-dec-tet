@@ -7,9 +7,16 @@ WORKDIR /app
 # Copy package.json and install dependencies
 COPY package.json ./
 RUN npm install
-# Give executable permission to react-scripts (fix permission issue)
 
-RUN chmod +x /app/node_modules/.bin/react-scripts
+# Give executable permissions to all binaries in node_modules/.bin
+RUN chmod +x /app/node_modules/.bin/*
+
+# Ensure correct ownership of files
+RUN chown -R node:node /app
+
+# Switch to the non-root user (optional but recommended)
+USER node
+
 # Copy source code
 COPY . .
 
