@@ -38,3 +38,5 @@ artifacts:
     - scripts/start.sh
   name: Artifacts
   discard-paths: yes
+
+# demo push
