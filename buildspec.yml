@@ -16,7 +16,7 @@ phases:
 
   build:
     commands:
-      # Build and push the frontend image
+      # Build and push the frontend 
       - ls -l
       - cd frontend/
       - docker build -t vaibhav188/frontend:$CODEBUILD_BUILD_NUMBER .
