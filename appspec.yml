@@ -7,15 +7,15 @@ files:
   - source: start.sh
     destination: /home/ubuntu
     overwrite: true  # Ensure this overwrites the existing file
-  - source: stop.sh
-    destination: /home/ubuntu
-    overwrite: true  # Ensure this overwrites the existing file
+  # - source: stop.sh
+  #   destination: /home/ubuntu
+  #   overwrite: true  # Ensure this overwrites the existing file
 
 hooks:
-  ApplicationStop:
-    - location: stop.sh
-      timeout: 300
-      runas: root
+  # ApplicationStop:
+  #   - location: stop.sh
+  #     timeout: 300
+  #     runas: root
 
   ApplicationStart:
     - location: start.sh
