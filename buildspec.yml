@@ -39,7 +39,7 @@ artifacts:
     - appspec.yml
     - docker-compose.yml
     - scripts/start.sh
-    - scripts/stop.sh
+    
   name: Artifacts
   discard-paths: yes
 
