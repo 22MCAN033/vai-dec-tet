@@ -1,4 +1,4 @@
 #!/bin/bash
 # Stop all running containers
-cd /home/ubuntu/
+cd /home/ec2-user/
 docker-compose down
