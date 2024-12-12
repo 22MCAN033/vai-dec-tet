@@ -2,13 +2,21 @@ version: 0.0
 os: linux
 files:
   - source: docker-compose.yml
-    destination: /home/ec2-user
-    overwrite: true   # Add this line to overwrite the existing
+    destination: /home/ubuntu
+    overwrite: true  # Ensure this overwrites the existing file
   - source: start.sh
-    destination: /home/ec2-user 
-    overwrite: true   # Add this line to overwrite the existing file
+    destination: /home/ubuntu
+    overwrite: true  # Ensure this overwrites the existing file
+  - source: stop.sh
+    destination: /home/ubuntu
+    overwrite: true  # Ensure this overwrites the existing file
 
 hooks:
+  ApplicationStop:
+    - location: stop.sh
+      timeout: 300
+      runas: root
+
   ApplicationStart:
     - location: start.sh
       timeout: 300

@@ -20,10 +20,10 @@ phases:
       - ls -l
       - cd frontend/
       - docker build -t vaibhav188/frontend:$CODEBUILD_BUILD_NUMBER .
-      - docker tag vaibhav188/frontend:$CODEBUILD_BUILD_NUMBER vaibhav188/frontend:latest
+      - docker tag vaibhav188/frontend:$CODEBUILD_BUILD_NUMBER vaibhav188/frontend:3
       - docker images
       - docker push vaibhav188/frontend:$CODEBUILD_BUILD_NUMBER
-      - docker push vaibhav188/frontend:latest
+      - docker push vaibhav188/frontend:3
       
 
       # Build and push the backend image
