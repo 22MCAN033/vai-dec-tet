@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div>
-      <h1>Submit Your  Data</h1>
+      <h1>Submit Your vaibhav Data</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name:</label>
