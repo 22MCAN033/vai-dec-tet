@@ -7,7 +7,7 @@ const port = 5000;
 // Middleware for CORS
 app.use(cors());
 
-// Middleware to parse JSON data in POST requests
+// Middleware to parse JSON data in POST r
 app.use(bodyParser.json());
 
 // Root route for GET request
