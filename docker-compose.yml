@@ -1,4 +1,4 @@
-# version: '3'
+version: '3'
 
 services:
   backend:
@@ -10,7 +10,7 @@ services:
       - frontend-backend-network # Custom network for communication with 
 
   frontend:
-    image: vaibhav188/frontend:2 # Use the pre-built image for frontend
+    image: vaibhav188/frontend:5 # Use the pre-built image for frontend
     container_name: frontend
     ports:
       - "3000:3000" # Expose frontend service
