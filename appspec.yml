@@ -6,7 +6,7 @@ files:
     overwrite: true  # Ensure this overwrites the existing file
   - source: start.sh
     destination: /home/ubuntu
-    overwrite: true  # Ensure this overwrites the existing file
+    overwrite: true  # Ensure this overwrites the existing
  
 
 hooks:
